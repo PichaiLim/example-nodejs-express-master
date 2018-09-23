@@ -36,7 +36,7 @@ jobs:
       # run tests!
       - run: yarn test
 
-      - setup_remote_doker
+      - setup_remote_docker
 
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
