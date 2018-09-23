@@ -42,7 +42,8 @@ jobs:
 
       - run:
           name: "Build docker image and push to docker hub"
-          command: cp Dockerfile.production Dockerfile
+          command: |
+            cp Dockerfile.production Dockerfile
             docker build -t pichailim/nginx:latest .
             docker build -t pichailim/nginx:${CIRCLE_SHA1} .
             docker push -t pichailim/nginx:latest
