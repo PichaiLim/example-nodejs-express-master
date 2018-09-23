@@ -49,8 +49,6 @@ jobs:
             docker push  pichailim/nginx:latest
             docker push  pichailim/nginx:${CIRCLE_SHA1}
 
-      - run: echo Done
-
       - run:
           name: "Call to ranncher to deploy"
           command: |
@@ -63,3 +61,5 @@ jobs:
               --batch_size 3 --start_first \ 
               --auto_complete --timeout 600 \
               /
+
+      - run: echo Done
