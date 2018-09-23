@@ -46,7 +46,7 @@ jobs:
             cp Dockerfile.production Dockerfile
             docker build -t pichailim/nginx:latest .
             docker build -t pichailim/nginx:${CIRCLE_SHA1} .
-            docker push -t pichailim/nginx:latest
-            docker push -t pichailim/nginx:${CIRCLE_SHA1}
+            docker push pichailim/nginx:latest
+            docker push pichailim/nginx:${CIRCLE_SHA1}
 
       - run: echo Done
